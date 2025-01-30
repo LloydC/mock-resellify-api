@@ -8,4 +8,10 @@ router.get("/", (req, res, next) => {
         .catch(err => console.error(err))
 });
 
+router.post("/", (req, res, next) => {
+    User.create(req.body)
+    .then(newUser => res.json(newUser))
+    .catch(err => console.error(err))
+})
+
 module.exports = router;
