@@ -9,4 +9,11 @@ router.get("/", (req, res, next) => {
  
 });
 
+router.post("/", (req, res, next) => {
+    Setting.create(req.body)
+            .then(newSetting => res.json(newSetting))
+            .catch(err => console.error(err))
+ 
+});
+
 module.exports = router;
